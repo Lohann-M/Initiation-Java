@@ -4,7 +4,7 @@
  * @author dPlanchet
  */
 
-package LM.Initiation;
+package ml.initiation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

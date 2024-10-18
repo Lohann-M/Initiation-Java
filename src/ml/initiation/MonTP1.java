@@ -1,4 +1,4 @@
-package LM.Initiation;
+package ml.initiation;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package LM.Initiation;
+package ml.initiation;
 
 public class MonTP3 {
     public static void main(String[] args) {
