@@ -1,42 +1,53 @@
 package ml.initiation;
 
 public class MonTP4 {
-    public MonTP4() {
-    }
 
-    public static String TransformeEnPrenom(String laChaine) {
-        laChaine = laChaine.trim();
-        int longueur = laChaine.length();
-        if (longueur < 2) {
-            return laChaine.toUpperCase();
+    // Méthode pour transformer une chaîne en prénom formaté
+
+    public static String transformeEnPrenom(String laChaine) {
+
+        String partie1; // la partie 1 du résultat (Première Majuscule)
+
+        String partie2; // la partie 2 du résultat (minuscules et tiret)
+
+        String partie3; // la partie 3 du résultat (Deuxième majuscule)
+
+        String partie4; // la partie 4 du résultat (minuscules)
+
+        int longueur; // longueur de la chaîne saisie
+
+        int positionTiret; // position du tiret
+
+        laChaine = laChaine.trim(); // supprime les espaces inutiles à gauche et à droite
+
+        longueur = laChaine.length();
+
+        if (longueur < 2) return laChaine.toUpperCase();
+
+        positionTiret = laChaine.indexOf("-");
+
+        if (positionTiret == -1) {
+
+            partie1 = laChaine.substring(0, 1);
+
+            partie2 = laChaine.substring(1);
+
+            return partie1.toUpperCase() + partie2.toLowerCase();
+
         } else {
-            int positionTiret = laChaine.indexOf(45);
-            String var10000;
-            String partie1;
-            String partie2;
-            if (positionTiret == -1) {
-                partie1 = laChaine.substring(0, 1);
-                partie2 = laChaine.substring(1, longueur);
-                var10000 = partie1.toUpperCase();
-                return var10000 + partie2.toLowerCase();
-            } else {
-                partie1 = laChaine.substring(0, 1);
-                partie2 = laChaine.substring(1, positionTiret);
-                String partie3 = laChaine.substring(positionTiret + 1, positionTiret + 2);
-                String partie4 = laChaine.substring(positionTiret + 2, longueur);
-                var10000 = partie1.toUpperCase();
-                return var10000 + partie2.toLowerCase() + partie3.toUpperCase() + partie4.toLowerCase();
-            }
-        }
-    }
 
-    public static void main(String[] args) {
-        String test1 = TransformeEnPrenom("jean-luc");
-        String test2 = TransformeEnPrenom("MARIE");
-        String test3 = TransformeEnPrenom("luc");
-        System.out.println(test1);
-        System.out.println(test2);
-        System.out.println(test3);
+            partie1 = laChaine.substring(0, 1);
+
+            partie2 = laChaine.substring(1, positionTiret+1);
+
+            partie3 = laChaine.substring(positionTiret + 1, positionTiret + 2);
+
+            partie4 = laChaine.substring(positionTiret + 2);
+
+            return partie1.toUpperCase() + partie2.toLowerCase() + partie3.toUpperCase() + partie4.toLowerCase();
+
+        }
+
     }
 }
 
