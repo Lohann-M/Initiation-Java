@@ -6,12 +6,12 @@
 
 package ml.initiation;
 
+import javax.swing.*;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.text.DecimalFormat; 
-import javax.swing.JOptionPane;
 
 /**
  * <b>Cette classe offre différents services courants sous forme de méthodes à portée classe.</b>
